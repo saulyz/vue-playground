@@ -4,7 +4,8 @@
       <img src="./assets/logo.png" width="50" height="50">
     </router-link>
     <div>
-       <router-link to="/child-parent-counters">Child-Parent</router-link>
+       <router-link to="/child-parent-counters">Child-Parent</router-link> |
+       <router-link to="/todo-list">Todo application</router-link>
     </div>
     <router-view></router-view>
   </div>
