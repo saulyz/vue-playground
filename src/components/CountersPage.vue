@@ -1,6 +1,6 @@
 <template>
   <div class="counters-page">
-    <h1>Child Counters receiving props and informing parents when Max</h1>
+    <p>Child counter is receiving props and emiting events to notice Parent when Max value is reached</p>
     <div class="counter-row" v-bind:class="{'is-max': isAtMaxVal}">
       <p>
         Set a max value
@@ -8,6 +8,7 @@
         <Counter v-model="maxval" :maxval=maxval v-on:maximum="reachedMax" v-on:default="isDefault"></Counter>
       </p>
     </div>
+    <small class="note">Keep clicking button till the max, then give a bigger max</small>
   </div>
 </template>
 
@@ -56,5 +57,10 @@ export default {
   }
   .is-max {
     border: 1px solid #ffcccc;
+  }
+  .note{
+    display: block;
+    margin: 15px 0;
+    color: #999;
   }
 </style>

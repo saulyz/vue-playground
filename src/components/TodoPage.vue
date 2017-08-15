@@ -2,7 +2,7 @@
   <div class="todo-page">
     <p>
       Todo object is held in this page component<br/>
-      TodoAddItem is passing values to parent via callback function
+      Child components are passing values to parent via callback functions
     </p>
     <h3>Todo list tasks</h3>
       <ul>
