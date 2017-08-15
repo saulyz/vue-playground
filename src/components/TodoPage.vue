@@ -11,6 +11,7 @@
         </li>
       </ul>
       <todo-add-item :callback="setNewTask"></todo-add-item>
+      <hr size="1" class="separator-line">
       <small class="note">Task list is stored in this page component, so if you navigate away, all tasks are lost</small>
   </div>
 </template>
@@ -49,14 +50,30 @@ export default {
     padding: 0;
     list-style: none;
   }
+
   li {
     margin: 0;
     padding: 0;
+    height: 30px;
   }
+
+  input[type="text"] {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
   .fa-icon {
     vertical-align: bottom;
     margin-bottom: 4px;
   }
+
+  .separator-line {
+    margin: 30px auto;
+    width: 75%;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
   .note{
     display: block;
     margin: 15px 0;

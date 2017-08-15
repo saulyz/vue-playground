@@ -1,8 +1,9 @@
 <template>
   <div class="todo-item">
     <small>{{number}}.</small>
-    <input type="checkbox" :id="number" v-model="item.completed">
-    <label :for="number" :class="{'completed': item.completed}">{{item.task}}</label>
+    <input type="checkbox" :id="number" :disabled="editMode" v-model="item.completed">
+    <input type="text" class="edit" v-if="editMode" v-model="item.task" @keyup.enter="disableEdit">
+    <label :for="number" v-else="editMode" :class="{'completed': item.completed}" @click="enableEdit">{{item.task}}</label>
     - <span @click="remove"><icon name="trash"></icon></span>
   </div>
 </template>
@@ -14,13 +15,26 @@ export default {
 
   data () {
     return {
-      number: null
+      number: null,
+      editMode: false
     }
   },
 
   methods: {
     remove () {
       this.callback(this.index)
+    },
+    enableEdit () {
+      if (this.item.completed) {
+        console.log('Cannot edit completed item')
+      } else {
+        this.editMode = true
+        console.log('Edit was enabled')
+      }
+    },
+    disableEdit () {
+      console.log('Edit was disabled')
+      this.editMode = false
     }
   },
 
@@ -34,17 +48,22 @@ export default {
 <style>
   .todo-item {
     display: inline-block;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   .todo-item input[type="checkbox"]{
     margin-right: 5px;
   }
 
-  .todo-item label {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  .todo-item .edit:focus {
+    outline: 0;
+  }
+
+  .todo-item .edit {
+    border: 1px solid #33aa33;
   }
 
   .todo-item .completed {

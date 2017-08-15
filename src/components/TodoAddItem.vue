@@ -1,5 +1,6 @@
 <template>
   <div class="new-item">
+    <icon class="new-task-input-icon" name="plus-circle"></icon>
     <input
       type="text"
       v-model="text"
@@ -29,11 +30,21 @@ export default {
 <style>
   .new-item {
     margin: 0 auto;
-    width: 300px;
+    width: 350px;
   }
+
+  .new-item input:focus {
+    outline: 0;
+    border-color: #33aa33;
+  }
+
   .new-item input {
-    padding: 5px 10px;
-    width: 100%;
-    font-size: 14px;
+    width: calc(100% - 50px);
+    border: 2px solid #ddd;
+  }
+
+  .new-task-input-icon {
+    height: 20px;
+    color: #aaa;
   }
 </style>
