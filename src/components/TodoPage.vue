@@ -6,8 +6,8 @@
     </p>
     <h3>Todo list tasks</h3>
       <ul>
-        <li v-for="todoItem in todoList">
-          <todo-item :item="todoItem"></todo-item>
+        <li v-for="(todoItem, index) in todoList">
+          <todo-item :item="todoItem" :index="index"></todo-item>
         </li>
       </ul>
       <todo-add-item :callback="setNewTask"></todo-add-item>
@@ -24,8 +24,8 @@ export default {
   data () {
     return {
       todoList: [
-        {task: 'Do stuff with VueJS'},
-        {task: 'Write nice code'}
+        {task: 'Do stuff with VueJS', completed: true},
+        {task: 'Write nice code', completed: false}
       ]
     }
   },

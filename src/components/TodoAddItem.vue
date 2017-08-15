@@ -29,9 +29,11 @@ export default {
 <style>
   .new-item {
     margin: 0 auto;
-    width: 200px;
+    width: 300px;
   }
   .new-item input {
+    padding: 5px 10px;
     width: 100%;
+    font-size: 14px;
   }
 </style>
