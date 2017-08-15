@@ -2,6 +2,14 @@
 
 > testing vue
 
+Run the project and see the experiments that are linked in navigation.
+
+## Simple start
+
+``` bash
+npm start
+```
+
 ## Build Setup
 
 ``` bash
